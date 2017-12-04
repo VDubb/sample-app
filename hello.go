@@ -3,6 +3,9 @@ package main
 import (
 	"html/template"
 	"net/http"
+	
+	"google.golang.org/appengine"
+	"google.golang.org/appengine/user"
 )
 
 func hello(w http.ResponseWriter, r *http.Request) {
