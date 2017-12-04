@@ -3,9 +3,6 @@ package hello
 import (
 	"html/template"
 	"net/http"
-	
-	"google.golang.org/appengine"
-	"google.golang.org/appengine/user"
 )
 
 func hello(w http.ResponseWriter, r *http.Request) {
@@ -13,7 +10,7 @@ func hello(w http.ResponseWriter, r *http.Request) {
 	t.Execute(w, "Hello World!")
 }
 
-func main() {
+func init() {
 	http.HandleFunc("/", hello)
 	http.ListenAndServe(":80", nil)
 }
